@@ -1,0 +1,25 @@
+.body {
+  background-color: #1b1b32;
+  height: 100vh;
+}
+
+.city-name {
+  font-size: 62px;
+  color: white;
+  padding-top: 20px;
+}
+
+.temp-details {
+  font-size: 40px;
+  color: antiquewhite;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.extra-info {
+  display: inline-block;
+  margin-right: 30px;
+  color: white
+}

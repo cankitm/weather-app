@@ -1,1 +1,36 @@
-Test landing page {{weather_data.name}}
+<div class="body">
+  <div *ngIf="loader" class="text-center">
+    <div class="city-name">
+      Loading...
+    </div>
+  </div>
+  <div *ngIf="!loader" class="text-center">
+    <div class="city-name" [innerText]="weather_data.name + ', ' + weather_data.sys.country">
+    </div>
+    <div class="temp-details">
+      <span [innerText]="current_temp.temp + '° '"></span>
+      <span class="cursor-pointer" (click)="changeFormat()" [innerText]="current_temp.format"></span>
+    </div>
+    <div>
+      <span [innerText]="weather_data.weather[0].main"></span>
+    </div>
+    <div>
+
+      <img src="{{weather_data.weather[0].icon}}">
+    </div>
+    <div>
+      <span>
+        <div class="extra-info">
+          <span>Sunrise</span>
+          <div>
+            {{weather_data.sys.sunrise*1000 | date:'shortTime'}} </div>
+        </div>
+        <div class="extra-info">
+          <span>Sunset</span>
+          <div>
+            {{weather_data.sys.sunset*1000 | date:'shortTime'}} </div>
+        </div>
+
+      </span>
+    </div>
+  </div>
